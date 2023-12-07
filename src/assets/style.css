@@ -1,0 +1,48 @@
+body {
+}
+
+.w3rcontainer {
+  border: 1px solid #cccfdb;
+  border-radius: 2px;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active-shadow {
+  transition: all 0.15s;
+}
+
+.active-shadow:focus {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+}
+
+.active-shadow-btn {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
+  transition: all 0.2s;
+}
+.active-shadow-btn:hover {
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+}
+.active-shadow-btn:active {
+  background-color: rgb(229, 231, 235);
+}
