@@ -1,19 +1,25 @@
-import { useState } from "react";
-import InputForm from "./InputForm";
-import Expenses from "./Expenses";
-import TopNavbar from "./nav/TopNavbar";
+import React from "react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+
 import "./assets/style.css";
+
+//pages
+
+import Home from "./pages/Home/Home";
+import ExpenseTracker from "./pages/Expense-Tracker/ExpenseTracker";
+import CarsTarcker from "./pages/Cars-Tracker/CarsTracker";
 
 function App() {
   return (
-    <>
-      <TopNavbar />
-
-      <div className="max-w-4xl m-auto">
-        <InputForm />
-        <Expenses />
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/expense-tracker" element={<ExpenseTracker />} />
+          <Route path="/cars-tracker" element={<CarsTarcker />} />
+        </Routes>
+      </>
+    </BrowserRouter>
   );
 }
 

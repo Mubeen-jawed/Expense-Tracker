@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPencilAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TopNavbar = () => {
   return (
@@ -12,6 +13,30 @@ const TopNavbar = () => {
             Diary
           </h2>
         </li>
+
+        <div className="w-3/5 flex justify-evenly">
+          <Link
+            to="/expense-tracker"
+            className="hover-underline-animation cursor-pointer"
+          >
+            Expense Tracker
+          </Link>
+          <Link
+            to="/cars-tracker"
+            className="hover-underline-animation cursor-pointer"
+          >
+            Cars Tracker
+          </Link>
+          <Link className="hover-underline-animation cursor-pointer">
+            To-Do List
+          </Link>
+          <Link className="hover-underline-animation cursor-pointer">
+            Notes Keeping
+          </Link>
+          <Link className="hover-underline-animation cursor-pointer">
+            Cars Tracker
+          </Link>
+        </div>
 
         <div className="flex items-center">
           <li className="mr-5">

@@ -20,7 +20,7 @@ body {
   left: 0;
   background-color: black;
   transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .hover-underline-animation:hover:after {
@@ -29,7 +29,7 @@ body {
 }
 
 .active-shadow {
-  transition: all 0.15s;
+  transition: all 0.5s;
 }
 
 .active-shadow:focus {
@@ -38,7 +38,7 @@ body {
 
 .active-shadow-btn {
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 .active-shadow-btn:hover {
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
