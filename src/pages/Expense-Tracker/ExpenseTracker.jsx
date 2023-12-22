@@ -8,7 +8,7 @@ const ExpenseTracker = () => {
     <>
       <TopNavbar />
 
-      <div className="max-w-4xl m-auto">
+      <div className="max-w-4xl m-auto px-2">
         <InputForm />
         <Expenses />
       </div>

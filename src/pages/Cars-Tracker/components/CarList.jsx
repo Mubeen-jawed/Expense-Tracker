@@ -1,13 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCar } from "../store";
+
 import { FaTrashAlt } from "react-icons/fa";
+import CarSearch from "./CarSearch";
 
 const CarList = () => {
   const dispatch = useDispatch();
 
-  const cars = useSelector((state) => {
-    return state.cars.data;
+  const cars = useSelector(({ cars: { searchTerm, data } }) => {
+    if (searchTerm) {
+      return data.filter((car) => {
+        car.name.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    } else {
+      return data;
+    }
   });
 
   const returnedCars = cars.map((car) => {
@@ -22,15 +30,16 @@ const CarList = () => {
         </div>
       </div>
     );
-
-    function handleDelete(car) {
-      dispatch(removeCar(car.id));
-    }
   });
+
+  function handleDelete(car) {
+    dispatch(removeCar(car.id));
+  }
 
   return (
     <div className="mt-20 mb-10">
       <h2 className="capitalize font-serif text-4xl">your cars</h2>
+      <CarSearch />
       <div className="flex flex-col border border-solid border-gray-500 rounded-md p-4 mt-5">
         <div className="flex capitalize px-1">
           <h4 className="text-lg font-semibold w-3/5 capitalize">car</h4>

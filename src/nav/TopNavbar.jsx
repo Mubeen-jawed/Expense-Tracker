@@ -6,13 +6,13 @@ const TopNavbar = () => {
   return (
     <div className="">
       <ul className=" shadow-lg flex items-center justify-between w-full fixed top-0 px-12 py-3 bg-white">
-        <li className="flex">
+        <Link to="/" className="flex cursor-pointer">
           <FaPencilAlt className="text-4xl mr-1" />
           <h2 style={{ fontFamily: "cursive" }} className="text-4xl">
             {" "}
             Diary
           </h2>
-        </li>
+        </Link>
 
         <div className="w-3/5 flex justify-evenly">
           <Link
