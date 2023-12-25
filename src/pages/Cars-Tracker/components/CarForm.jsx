@@ -13,7 +13,8 @@ const CarForm = () => {
   });
 
   function handleCarName(e) {
-    dispatch(changeName(e.target.value));
+    const carName = e.target.value;
+    dispatch(changeName(carName));
   }
 
   function handleCarCost(e) {
@@ -43,7 +44,7 @@ const CarForm = () => {
             className=" capitalize hover:bg-gray-200 cursor-default border border-solid border-gray-500 rounded-md outline-none p-2 w-full mt-1 active-shadow"
             type="text"
             spellCheck={false}
-            onChange={(e) => handleCarName(e)}
+            onChange={handleCarName}
             value={name || ""}
           />
         </label>

@@ -8,21 +8,34 @@ import CarSearch from "./CarSearch";
 const CarList = () => {
   const dispatch = useDispatch();
 
-  const cars = useSelector(({ cars: { searchTerm, data } }) => {
-    if (searchTerm) {
-      return data.filter((car) => {
-        car.name.toLowerCase().includes(searchTerm.toLowerCase());
-      });
-    } else {
-      return data;
+  const { cars, name } = useSelector(({ form, cars: { searchTerm, data } }) => {
+    function filteredCars() {
+      if (searchTerm) {
+        return data.filter((car) => {
+          if (car.name.includes(searchTerm)) {
+            return data;
+          }
+        });
+      } else {
+        return data;
+      }
     }
+
+    return {
+      cars: filteredCars(),
+      name: form.name,
+    };
   });
 
   const returnedCars = cars.map((car) => {
+    const bold = name && car.name.includes(name);
+    console.log(bold);
     return (
       <div key={car.id} className="p-1 ">
         <div className="flex capitalize">
-          <p className="w-3/5">{car.name}</p>
+          <p className={`${bold ? "font-bold" : "font-normal"} w-3/5`}>
+            {car.name}
+          </p>
           <p className="w-1/6">${car.cost}</p>
           <button onClick={() => handleDelete(car)} className="w-1/5">
             <FaTrashAlt />

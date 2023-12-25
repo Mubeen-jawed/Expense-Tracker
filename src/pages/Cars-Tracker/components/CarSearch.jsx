@@ -16,7 +16,9 @@ const CarSearch = () => {
   }
 
   return (
-    <div className="w-full flex justify-end">
+    <div className="w-full flex justify-end items-center">
+      <caption className="font-semibold mr-2">Search</caption>
+
       <input
         type="text"
         className="capitalize hover:bg-gray-200 focus:bg-gray-200 cursor-default border border-solid border-gray-500 rounded-md outline-none py-1 px-2"
