@@ -1,5 +1,5 @@
 import React from "react";
-import { changeSearchTerm } from "../store/index";
+import { changeSearchTerm } from "../../../store";
 import { useDispatch, useSelector } from "react-redux";
 
 const CarSearch = () => {
@@ -16,7 +16,7 @@ const CarSearch = () => {
   }
 
   return (
-    <div className="w-full flex justify-end items-center">
+    <div className="w-full sm:flex flex-col justify-end items-center mt-2">
       <caption className="font-semibold mr-2">Search</caption>
 
       <input

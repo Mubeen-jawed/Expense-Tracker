@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeName, changeCost, addCar } from "../store";
+import { changeName, changeCost, addCar } from "../../../store";
 
 const CarForm = () => {
   const dispatch = useDispatch();
 
   const { name, cost } = useSelector((state) => {
     return {
-      name: state.form.name,
-      cost: state.form.cost,
+      name: state.carForm.name,
+      cost: state.carForm.cost,
     };
   });
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeCar } from "../store";
+import { removeCar } from "../../../store";
 
 import { FaTrashAlt } from "react-icons/fa";
 import CarSearch from "./CarSearch";
@@ -8,24 +8,26 @@ import CarSearch from "./CarSearch";
 const CarList = () => {
   const dispatch = useDispatch();
 
-  const { cars, name } = useSelector(({ form, cars: { searchTerm, data } }) => {
-    function filteredCars() {
-      if (searchTerm) {
-        return data.filter((car) => {
-          if (car.name.includes(searchTerm)) {
-            return data;
-          }
-        });
-      } else {
-        return data;
+  const { cars, name } = useSelector(
+    ({ carForm, cars: { searchTerm, data } }) => {
+      function filteredCars() {
+        if (searchTerm) {
+          return data.filter((car) => {
+            if (car.name.includes(searchTerm)) {
+              return data;
+            }
+          });
+        } else {
+          return data;
+        }
       }
-    }
 
-    return {
-      cars: filteredCars(),
-      name: form.name,
-    };
-  });
+      return {
+        cars: filteredCars(),
+        name: carForm.name,
+      };
+    }
+  );
 
   const returnedCars = cars.map((car) => {
     const bold = name && car.name.includes(name);
@@ -51,8 +53,10 @@ const CarList = () => {
 
   return (
     <div className="mt-20 mb-10">
-      <h2 className="capitalize font-serif text-4xl">your cars</h2>
-      <CarSearch />
+      <div className="sm:flex flex-col">
+        <h2 className="capitalize font-serif text-4xl">your cars</h2>
+        <CarSearch />
+      </div>
       <div className="flex flex-col border border-solid border-gray-500 rounded-md p-4 mt-5">
         <div className="flex capitalize px-1">
           <h4 className="text-lg font-semibold w-3/5 capitalize">car</h4>

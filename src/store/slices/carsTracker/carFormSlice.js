@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addCar } from "./carsSlice";
 
-const formSlice = createSlice({
-  name: "form",
+const carFormSlice = createSlice({
+  name: "carForm",
   initialState: {
     name: "",
     cost: 0,
@@ -24,5 +24,5 @@ const formSlice = createSlice({
   },
 });
 
-export const { changeName, changeCost } = formSlice.actions;
-export const formReducer = formSlice.reducer;
+export const { changeName, changeCost } = carFormSlice.actions;
+export const carFormReducer = carFormSlice.reducer;
