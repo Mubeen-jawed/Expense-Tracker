@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { FaPencilAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+
+//elements
+import PrimaryBtn from "../components/PrimaryBtn";
+
 const TopNavbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -56,9 +60,7 @@ const TopNavbar = () => {
             <button className="hover-underline-animation">Login</button>
           </li>
           <li>
-            <button className="border-2 border-solid border-black rounded-full py-2 px-2 flex justify-center items-center active-shadow-btn">
-              Sign Up
-            </button>
+            <PrimaryBtn text="sign up" />
           </li>
         </div>
       </ul>
