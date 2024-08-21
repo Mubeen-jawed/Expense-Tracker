@@ -44,7 +44,10 @@ const TopNavbar = () => {
           >
             Cars Tracker
           </Link>
-          <Link className="hover-underline-animation cursor-pointer mb-2 lg:mb-0">
+          <Link
+            to="/to-do-list"
+            className="hover-underline-animation cursor-pointer mb-2 lg:mb-0"
+          >
             To-Do List
           </Link>
           <Link className="hover-underline-animation cursor-pointer mb-2 lg:mb-0">
@@ -59,9 +62,9 @@ const TopNavbar = () => {
           <li className="mr-3 lg:mr-5">
             <button className="hover-underline-animation">Login</button>
           </li>
-          <li>
+          <Link to={"/sign-up"}>
             <PrimaryBtn text="sign up" />
-          </li>
+          </Link>
         </div>
       </ul>
       <div className="lg:hidden">

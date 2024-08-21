@@ -28,12 +28,27 @@ import {
   expenseFormReducer,
 } from "./slices/expenseTracker/expenseFormSlice";
 
+// To-Do List
+
+import {
+  addToDoList,
+  removeToDoList,
+  ToDoListReducer,
+} from "./slices/ToDoList/ToDoListSlice";
+
+import {
+  changeToDoList,
+  ToDoListFormReducer,
+} from "./slices/ToDoList/ToDoListFormSlice";
+
 const store = configureStore({
   reducer: {
     carForm: carFormReducer,
     cars: carsReducer,
     expenseForm: expenseFormReducer,
     expenses: expenseReducer,
+    toDoListForm: ToDoListFormReducer,
+    toDoLists: ToDoListReducer,
   },
 });
 
@@ -49,4 +64,9 @@ export {
   changeDescription,
   changeExpense,
   changeCategory,
+  changeToDoList,
+  ToDoListFormReducer,
+  addToDoList,
+  removeToDoList,
+  ToDoListReducer,
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PrimaryBtn = (prop) => {
   const { text, className } = prop;

@@ -8,6 +8,8 @@ import "./assets/style.css";
 import Home from "./pages/Home/Home";
 import ExpenseTracker from "./pages/Expense-Tracker/ExpenseTracker";
 import CarsTarcker from "./pages/Cars-Tracker/CarsTracker";
+import ToDoList from "./pages/To-Do-List/ToDoList";
+import Signup from "./pages/SignUp/Signup";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/expense-tracker" element={<ExpenseTracker />} />
           <Route path="/cars-tracker" element={<CarsTarcker />} />
+          <Route path="/to-do-list" element={<ToDoList />} />
+          <Route path="/sign-up" element={<Signup />} />
         </Routes>
       </>
     </BrowserRouter>

@@ -48,7 +48,7 @@ const InputForm = () => {
         <label className=" cursor-default flex flex-col items-start" htmlFor="">
           <caption className="font-semibold">Description</caption>
           <input
-            className="hover:bg-gray-200 cursor-default capitalize border border-solid border-gray-500 rounded-md outline-none p-2 w-full mt-1 active-shadow"
+            className="hover:bg-Agray-200 cursor-default capitalize border border-solid border-gray-500 rounded-md outline-none p-2 w-full mt-1 active-shadow"
             type="text"
             spellCheck={false}
             onChange={handleDescription}
